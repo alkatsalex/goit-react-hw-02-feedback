@@ -1,0 +1,9 @@
+.feedbackOptions {
+    display: flex;
+    gap: 16px;
+}
+
+.btn {
+    width: 150px;
+    border-radius: 5px;
+}
