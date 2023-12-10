@@ -14,7 +14,7 @@ export class App extends Component {
 
 
   addFeedback = (option) => {
-    this.setState({[option]: this.state[option] + 1 });
+    this.setState(prevState => ({ [option]: prevState[option] + 1 }));
   };
 
 
@@ -46,7 +46,7 @@ render () {
 <Section
 title="Please leave feedback"> 
 <FeedbackOptions
- options={this.state}
+ options={Object.keys(this.state)}
  action={this.addFeedback}/>
 </Section>
 
@@ -56,8 +56,8 @@ title="Please leave feedback">
 title="Statistics">
 <Statistics
   good={this.state.good}
-  neutral={this.state.good}
-  bad={this.state.good}
+  neutral={this.state.neutral}
+  bad={this.state.bad}
   total={this.countTotalFeedback()}
   persent={this.countPositiveFeedbackPercentage()}/>
 </Section>
